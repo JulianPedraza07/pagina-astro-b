@@ -1,9 +1,21 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import { Icon } from 'astro-icon/components';
 ---
 
 <Layout title="Welcome to Astro.">
-	asdasdas
+	<div class="my-custom-class">
+		asdasdas
+	</div>
+	<span class=" font-Myfont">Hola mundo con mi fuente</span>
+
+	<Icon name="mdi:progress-upload" size='65' class='hover:text-yellow-300'/>
+	<Icon name="cib:epic-games" size="65" class=' text-white hover:text-black transition duration-1000' />
 </Layout>
+
+<style>
+	.my-custom-class{
+		@apply bg-red-600 text-white text-2xl
+	}
+</style>
 
