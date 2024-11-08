@@ -11,11 +11,60 @@ import { Icon } from 'astro-icon/components';
 
 	<Icon name="mdi:progress-upload" size='65' class='hover:text-yellow-300'/>
 	<Icon name="cib:epic-games" size="65" class=' text-white hover:text-black transition duration-1000' />
+	<div id="btn" data-role="Admin" class="bg-red-400 text-white" >
+		Pinchar
+	</div>
+	<div class="embla">
+		<div class="embla__container">
+		  <div class="embla__slide">Slide 1</div>
+		  <div class="embla__slide">Slide 2</div>
+		  <div class="embla__slide">Slide 3</div>
+		</div>
+	  </div>
 </Layout>
 
 <style>
 	.my-custom-class{
 		@apply bg-red-600 text-white text-2xl
 	}
+
+	.embla {
+  		overflow: hidden;
+		  max-width: 300px;
+		  background-color: red;
+	}
+	.embla__container {
+  		display: flex;
+		
+		
+	}
+	.embla__slide {
+  		flex: 0 0 100%;
+  		min-width: 0;
+		background-color: purple;
+	}
+
 </style>
+<script>
+	import JSConfetti from 'js-confetti'
+	import EmblaCarousel from 'embla-carousel'
+
+	const btn = document.getElementById('btn')
+
+	const jsConfetti = new JSConfetti()
+
+	btn.addEventListener('click', (e) =>{
+		console.log('ayyyyy!', e.target.classList)
+		jsConfetti.addConfetti()
+	})
+
+	
+
+	const emblaNode = document.querySelector('.embla')
+	const options = { loop: false }
+	const emblaApi = EmblaCarousel(emblaNode, options)
+
+
+	console.log(btn)
+</script>
 
